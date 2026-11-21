@@ -111,7 +111,7 @@
                     android:textColor="#555555"
                     android:textSize="13sp" />
                 <TextView
-                    android:id="@id/config_version"
+                    android:id="@+id/config_version"
                     android:layout_width="1dp"
                     android:layout_height="1dp"
                     android:visibility="gone" />
