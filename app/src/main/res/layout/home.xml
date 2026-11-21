@@ -242,6 +242,16 @@
                 <ProgressBar android:id="@id/progress" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
                 <TextView android:id="@id/details_more_less" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
                 <TextView android:id="@id/last_pkt_recv" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@+id/network_layout" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@+id/network_title" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@+id/network_info" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <ImageView android:id="@+id/network_icon" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <EditText android:id="@+id/myusername" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <EditText android:id="@+id/mypassword" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@+id/check_update" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <FrameLayout android:id="@+id/graph_layout" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@+id/notice_text" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" app:adSize="BANNER" app:adUnitId="ca-app-pub-2122970527460050/2449299092" />
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

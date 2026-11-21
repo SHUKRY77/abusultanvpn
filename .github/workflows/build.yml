@@ -34,12 +34,7 @@ jobs:
           rm -f local.properties
           chmod +x gradlew
 
-      - name: Build debug APK
-        working-directory: ${{ env.PROJECT_DIR }}
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
-
       - name: Build release APK
-        continue-on-error: true
         working-directory: ${{ env.PROJECT_DIR }}
         run: ./gradlew assembleRelease --no-daemon --stacktrace
 
