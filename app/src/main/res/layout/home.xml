@@ -1,754 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:orientation="vertical"
-		android:background="#FFFFFFFF"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-	<include
-		android:visibility="gone"
-		layout="@layout/appbar_layout" />
-	<FrameLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
-		<TextView
-			android:textSize="45dp"
-			android:typeface="serif"
-			android:textStyle="bold"
-			android:textColor="#FF000000"
-			android:layout_gravity="center"
-			android:visibility="gone"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginRight="5dp"
-			android:text="STREAM"
-			android:shadowColor="@color/accent_color"
-			android:shadowDy="3.0"
-			android:shadowRadius="3.0" />
-		<LinearLayout
-			android:gravity="center"
-			android:layout_gravity="center"
-			android:orientation="vertical"
-			android:visibility="gone"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="1dp">
-			<LinearLayout
-				android:gravity="center"
-				android:layout_gravity="center"
-				android:orientation="horizontal"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content">
-				<TextView
-					android:textSize="22sp"
-					android:typeface="serif"
-					android:textStyle="bold"
-					android:textColor="#FF00C853"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginRight="5dp"
-					android:text="ABANT " />
-				<TextView
-					android:textSize="22sp"
-					android:typeface="serif"
-					android:textStyle="bold"
-					android:textColor="#FFDAB420"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="VPN" />
-			</LinearLayout>
-			<TextView
-				android:textSize="8sp"
-				android:textColor="#FF000000"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="Build 1" />
-		</LinearLayout>
-		<ImageView
-			android:layout_gravity="center|right"
-			android:id="@id/account_dialog"
-			android:visibility="gone"
-			android:layout_width="30dp"
-			android:layout_height="30dp"
-			android:layout_margin="10dp"
-			android:src="@drawable/ic_username"
-			android:layout_centerVertical="true" />
-	</FrameLayout>
-	<LinearLayout
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent">
-		<ScrollView
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:fillViewport="true"
-			android:layout_weight="1.0">
-			<RelativeLayout
-				android:layout_width="match_parent"
-				android:layout_height="match_parent">
-				<LinearLayout
-					android:orientation="vertical"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent">
-					<TextView
-						android:textSize="9dp"
-						android:typeface="serif"
-						android:textStyle="bold"
-						android:textColor="#0D73B9"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="10dp"
-						android:layout_marginTop="5dp"
-						android:visibility="visible"
-						android:text="APP Build 1" />
-					<ImageView
-						android:layout_gravity="center|right|top"
-						android:focusable="true"
-						android:clickable="true"
-						android:layout_width="25dp"
-						android:layout_height="25dp"
-						android:layout_marginTop="10dp"
-						android:layout_marginRight="10dp"
-						android:src="@drawable/ic_menu"
-						android:onClick="menu"
-						app:tint="#0D73B9" />
-						<FrameLayout
-							android:gravity="center"
-							android:orientation="vertical"
-							android:visibility="visible"
-						android:layout_width="match_parent"
-						android:layout_height="130dp">
-						<ImageView
-							android:layout_gravity="center"
-							android:layout_width="100dp"
-							android:layout_height="100dp"
-							android:layout_marginTop="0.3dp"
-							android:src="@drawable/ic_app_icon" />
-						<FrameLayout
-							android:id="@+id/graph_layout"
-							android:visibility="gone"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent">
-							<fragment
-								android:name="app.ovpnudp.developer.fragment.GraphFragment"
-								android:layout_width="match_parent"
-								android:layout_height="match_parent" />
-						</FrameLayout>
-					</FrameLayout>
-					<LinearLayout
-						android:textColor="#FF717171"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"
-						android:layout_marginLeft="20dp"
-						android:layout_marginRight="20dp" />
-					<FrameLayout
-						android:visibility="gone"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="20dp"
-						android:layout_marginRight="20dp">
-						<LinearLayout
-							android:gravity="center_vertical"
-							android:layout_gravity="center|left"
-							android:orientation="horizontal"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content">
-							<ImageView
-								android:layout_width="20dp"
-								android:layout_height="20dp"
-								android:src="@drawable/ic_cloud_download"
-								app:tint="@color/accent_color" />
-							<TextView
-								android:textSize="10dp"
-								android:textStyle="bold"
-								android:textColor="#FF000000"
-								android:id="@id/bytes_in"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginLeft="5dp"
-								android:text="0 KB" />
-						</LinearLayout>
-						<LinearLayout
-							android:gravity="center_vertical"
-							android:layout_gravity="center|right"
-							android:orientation="horizontal"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content">
-							<TextView
-								android:textSize="10dp"
-								android:textStyle="bold"
-								android:textColor="#FF000000"
-								android:id="@id/bytes_out"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginRight="5dp"
-								android:text="0 KB" />
-							<ImageView
-								android:layout_width="20dp"
-								android:layout_height="20dp"
-								android:src="@drawable/ic_cloud_upload"
-								app:tint="@color/accent_color" />
-						</LinearLayout>
-					</FrameLayout>
-					<TextView
-						android:textSize="24sp"
-						android:textStyle="bold"
-						android:textColor="#263238"
-						android:layout_gravity="center"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="50dp"
-						android:text="@string/app" />
-					<LinearLayout
-						android:gravity="center"
-						android:orientation="horizontal"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content">
-						<TextView
-							android:textSize="15sp"
-							android:textColor="#263238"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginRight="0dp"
-							android:text="Version : " />
-						<TextView
-							android:textSize="15sp"
-							android:textColor="#263238"
-							android:id="@+id/config_version"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="1.0" />
-					</LinearLayout>
-					<FrameLayout
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="15dp"
-						android:layout_marginTop="5dp"
-						android:layout_marginRight="15dp"
-						android:layout_marginBottom="5dp">
-						<LinearLayout
-							android:gravity="clip_vertical"
-							android:orientation="horizontal"
-							android:background="@drawable/spinner_bg_new"
-							android:layout_width="match_parent"
-							android:layout_height="50dp"
-							android:layout_marginTop="5dp">
-							<Spinner
-								android:layout_gravity="center|left"
-								android:id="@id/profile"
-								android:layout_width="match_parent"
-								android:layout_height="35dp"
-								android:layout_marginLeft="10dp"
-								android:layout_marginRight="5dp"
-								android:spinnerMode="dialog" />
-						</LinearLayout>
-					</FrameLayout>
-					<FrameLayout
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="15dp"
-						android:layout_marginTop="0dp"
-						android:layout_marginRight="15dp"
-						android:layout_marginBottom="10dp">
-						<LinearLayout
-							android:gravity="clip_vertical"
-							android:orientation="horizontal"
-							android:background="@drawable/spinner_bg_new"
-							android:layout_width="match_parent"
-							android:layout_height="50dp"
-							android:layout_marginTop="5dp">
-							<Spinner
-								android:layout_gravity="center|left"
-								android:id="@+id/network_spin"
-								android:layout_width="match_parent"
-								android:layout_height="wrap_content"
-								android:layout_marginLeft="10dp"
-								android:layout_marginRight="5dp"
-								android:spinnerMode="dialog" />
-						</LinearLayout>
-					</FrameLayout>
-					<FrameLayout
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="15dp"
-						android:layout_marginTop="0dp"
-						android:layout_marginRight="15dp"
-						android:layout_marginBottom="10dp"
-						android:id="@+id/credentials_container"
-						android:visibility="gone">
-						<LinearLayout
-							android:gravity="clip_vertical"
-							android:orientation="horizontal"
-							android:background="@drawable/spinner_bg_new"
-							android:layout_width="match_parent"
-							android:layout_height="50dp"
-							android:layout_marginTop="5dp">
-							<EditText
-								android:textSize="15sp"
-								android:textStyle="bold"
-								android:textColor="#FF000000"
-								android:textColorHint="#FFDD2C00"
-								android:gravity="center"
-								android:id="@+id/myusername"
-								android:background="#00000000"
-								android:padding="10dp"
-								android:focusableInTouchMode="true"
-								android:layout_width="match_parent"
-								android:layout_height="40dp"
-								android:hint="Username"
-								android:singleLine="true"
-								android:layout_weight="1.0" />
-							<LinearLayout
-								android:layout_gravity="center"
-								android:background="#FF000000"
-								android:layout_width="2dp"
-								android:layout_height="35dp" />
-							<EditText
-								android:textSize="15sp"
-								android:textStyle="bold"
-								android:textColor="#FF000000"
-								android:textColorHint="#FFDD2C00"
-								android:gravity="center"
-								android:id="@+id/mypassword"
-								android:background="#00000000"
-								android:padding="10dp"
-								android:focusableInTouchMode="true"
-								android:layout_width="match_parent"
-								android:layout_height="match_parent"
-								android:hint="Password"
-								android:layout_weight="1.0"
-								android:inputType="textPassword" />
-						</LinearLayout>
-					</FrameLayout>
-						<LinearLayout
-							android:orientation="vertical"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:layout_marginLeft="22dp"
-							android:layout_marginTop="20dp"
-							android:layout_marginRight="22dp">
-							<FrameLayout
-								android:gravity="center"
-								android:layout_width="match_parent"
-								android:layout_height="wrap_content"
-								android:padding="12dp"
-								android:background="@drawable/status_card_bg">
-								<TextView
-									android:textAppearance="?android:attr/textAppearanceSmall"
-									android:textSize="18sp"
-									android:textStyle="bold"
-									android:textColor="#14213D"
-								android:layout_gravity="center"
-									android:id="@+id/status"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-									android:text="Disconnected"
-									android:singleLine="true" />
-							</FrameLayout>
-							<TextView
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_gravity="center"
-								android:layout_marginTop="12dp"
-								android:text="ACCOUNT EXPIRY"
-								android:textColor="#607D8B"
-								android:textSize="10sp"
-								android:textStyle="bold" />
-							<TextView
-								android:textSize="16sp"
-								android:textStyle="bold"
-								android:textColor="#263238"
-								android:layout_gravity="center"
-								android:id="@+id/expire_date"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginTop="5dp"
-								android:paddingLeft="15dp"
-								android:paddingTop="8dp"
-								android:paddingRight="15dp"
-								android:paddingBottom="8dp"
-								android:background="@drawable/expiry_badge_bg"
-								android:text="0 Days Left" />
-					</LinearLayout>
-					<FrameLayout
-						android:gravity="center"
-						android:layout_gravity="center"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="10dp"
-						android:layout_marginTop="20dp"
-						android:layout_marginRight="10dp"
-						android:layout_marginBottom="5dp"
-						android:layout_alignParentBottom="true"
-						android:layout_centerInParent="true">
-						<LinearLayout
-							android:layout_gravity="center"
-							android:orientation="vertical"
-							android:layout_width="120.699997dp"
-							android:layout_height="120.699997dp"
-							android:layout_alignParentBottom="true"
-							android:layout_centerInParent="true">
-								<Button
-									android:textSize="15sp"
-									android:textStyle="bold"
-										android:textColor="#00000000"
-										android:layout_gravity="center"
-										android:id="@id/connect"
-									android:background="@drawable/connect_button_hiba"
-									android:layout_width="match_parent"
-									android:layout_height="match_parent"
-									android:text="" />
-							<Button
-								android:textSize="15sp"
-									android:textStyle="bold"
-										android:textColor="#00000000"
-										android:layout_gravity="center"
-										android:id="@id/disconnect"
-									android:background="@drawable/connect_button_hiba"
-									android:layout_width="match_parent"
-									android:layout_height="match_parent"
-								android:text="" />
-						</LinearLayout>
-						<app.ovpnudp.developer.view.CircleProgressBar
-							android:id="@+id/custom_progressBar"
-							android:layout_width="128dp"
-							android:layout_height="128dp"
-							app:progress="0"
-								app:progressBarThickness="8dp"
-								app:progressbarColor="#FF00C853" />
-						</FrameLayout>
-						<TextView
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_gravity="center"
-							android:layout_marginTop="10dp"
-							android:text="CONNECTION TIME"
-							android:textColor="#607D8B"
-							android:textSize="10sp"
-							android:textStyle="bold" />
-						<TextView
-							android:textSize="24sp"
-							android:textStyle="bold"
-							android:textColor="#263238"
-							android:layout_gravity="center"
-							android:id="@+id/duration"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginTop="12dp"
-							android:paddingLeft="18dp"
-							android:paddingTop="8dp"
-							android:paddingRight="18dp"
-							android:paddingBottom="8dp"
-							android:background="@drawable/timer_badge_bg"
-							android:text="00:00:00" />
-					<LinearLayout
-						android:gravity="center"
-						android:orientation="horizontal"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="7dp" />
-					<FrameLayout
-						android:visibility="gone"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="10dp"
-						android:layout_marginTop="10dp"
-						android:layout_marginRight="10dp"
-						android:layout_marginBottom="5dp">
-						<LinearLayout
-							android:gravity="clip_vertical"
-							android:orientation="horizontal"
-							android:background="@drawable/spinner_bg_new"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:layout_marginTop="6dp">
-							<TextView
-								android:textSize="10dp"
-								android:typeface="serif"
-								android:textStyle="bold"
-								android:textColor="#FF000000"
-								android:gravity="center"
-								android:id="@+id/notice_text"
-								android:layout_width="match_parent"
-								android:layout_height="wrap_content"
-								android:layout_marginLeft="10dp"
-								android:layout_marginTop="10dp"
-								android:layout_marginRight="10dp"
-								android:layout_marginBottom="10dp"
-								android:text="Welcome to AH STAR VPN" />
-						</LinearLayout>
-						<TextView
-							android:textSize="7dp"
-							android:typeface="serif"
-							android:textStyle="bold"
-							android:textColor="@color/accent_color"
-							android:background="@drawable/spinner_bg_title"
-							android:paddingLeft="5dp"
-							android:paddingRight="5dp"
-							android:paddingBottom="1dp"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginLeft="15dp"
-							android:layout_marginTop="1dp"
-							android:text="NOTICE" />
-					</FrameLayout>
-					<com.google.android.gms.ads.AdView xmlns:app1="http://schemas.android.com/apk/res-auto"
-						android:layout_gravity="center"
-						android:id="@+id/adView"
-						android:visibility="gone"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="12dp"
-						app1:adSize="BANNER"
-						app1:adUnitId="ca-app-pub-2122970527460050/2449299092" />
-					<LinearLayout
-						android:orientation="vertical"
-						android:background="@drawable/rlb_card_bg"
-						android:paddingLeft="30dp"
-						android:paddingRight="30dp"
-						android:paddingBottom="40dp"
-						android:visibility="gone"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content">
-						<LinearLayout
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:orientation="vertical"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginTop="0dp"
-							android:layout_marginBottom="0dp">
-							<LinearLayout
-								android:orientation="horizontal"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content">
-								<View
-									android:background="@drawable/line_start_color_bg"
-									android:layout_width="match_parent"
-									android:layout_height="1dp"
-									android:layout_weight="1.0" />
-								<View
-									android:background="@drawable/line_end_color_bg"
-									android:layout_width="match_parent"
-									android:layout_height="1dp"
-									android:layout_weight="1.0" />
-							</LinearLayout>
-							<LinearLayout
-								android:orientation="horizontal"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content">
-								<View
-									android:background="@drawable/line_start_color_bg"
-									android:layout_width="match_parent"
-									android:layout_height="1dp"
-									android:layout_weight="1.0" />
-								<View
-									android:background="@drawable/line_end_color_bg"
-									android:layout_width="match_parent"
-									android:layout_height="1dp"
-									android:layout_weight="1.0" />
-							</LinearLayout>
-						</LinearLayout>
-						<LinearLayout
-							android:orientation="horizontal"
-							android:visibility="gone"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content">
-							<LinearLayout
-								android:gravity="center"
-								android:orientation="vertical"
-								android:background="@drawable/speed_start_color_bg"
-								android:padding="10dp"
-								android:layout_width="match_parent"
-								android:layout_height="wrap_content"
-								android:layout_marginRight="1dp"
-								android:layout_weight="1.0">
-								<ImageView
-									android:layout_width="45dp"
-									android:layout_height="45dp"
-									android:src="@drawable/ic_home_notification_upload" />
-								<LinearLayout
-									android:orientation="horizontal"
-									android:layout_width="wrap_content"
-									android:layout_height="wrap_content" />
-							</LinearLayout>
-							<LinearLayout
-								android:gravity="center"
-								android:orientation="vertical"
-								android:background="@drawable/speed_end_color_bg"
-								android:padding="10dp"
-								android:layout_width="match_parent"
-								android:layout_height="wrap_content"
-								android:layout_marginLeft="1dp"
-								android:layout_weight="1.0">
-								<ImageView
-									android:layout_width="45dp"
-									android:layout_height="45dp"
-									android:src="@drawable/ic_home_notification_download" />
-								<LinearLayout
-									android:orientation="horizontal"
-									android:layout_width="wrap_content"
-									android:layout_height="wrap_content" />
-							</LinearLayout>
-						</LinearLayout>
-						<LinearLayout
-							android:gravity="center_vertical"
-							android:orientation="horizontal"
-							android:id="@+id/network_layout"
-							android:background="@drawable/spinner_bg"
-							android:visibility="gone"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:layout_marginBottom="40dp"
-							android:foreground="?android:attr/selectableItemBackground">
-							<LinearLayout
-								android:gravity="center_vertical"
-								android:orientation="horizontal"
-								android:layout_width="match_parent"
-								android:layout_height="50dp">
-								<LinearLayout
-									android:gravity="center_vertical"
-									android:orientation="horizontal"
-									android:layout_width="match_parent"
-									android:layout_height="wrap_content">
-									<ImageView
-										android:id="@+id/network_icon"
-										android:layout_width="30dp"
-										android:layout_height="30dp"
-										android:layout_marginLeft="15dp"
-										android:src="@drawable/ic_web" />
-									<LinearLayout
-										android:gravity="center_vertical"
-										android:orientation="vertical"
-										android:paddingLeft="15dp"
-										android:layout_width="wrap_content"
-										android:layout_height="45dp"
-										android:layout_weight="1.0">
-										<TextView
-											android:textSize="14sp"
-											android:typeface="serif"
-											android:textStyle="bold"
-											android:textColor="#FFFFFBFB"
-											android:id="@+id/network_title"
-											android:layout_width="wrap_content"
-											android:layout_height="wrap_content"
-											android:singleLine="true" />
-										<TextView
-											android:textSize="12sp"
-											android:textColor="#263238"
-											android:id="@+id/network_info"
-											android:visibility="gone"
-											android:layout_width="wrap_content"
-											android:layout_height="wrap_content" />
-									</LinearLayout>
-									<ImageView
-										android:layout_width="25dp"
-										android:layout_height="25dp"
-										android:layout_marginRight="15dp"
-										android:src="@drawable/ic_arrow_right" />
-								</LinearLayout>
-							</LinearLayout>
-						</LinearLayout>
-					</LinearLayout>
-				</LinearLayout>
-				<LinearLayout
-					android:gravity="center"
-					android:orientation="horizontal"
-					android:background="@drawable/rlb_card_top_shape"
-					android:visibility="gone"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_alignParentBottom="true">
-					<LinearLayout
-						android:gravity="center_vertical"
-						android:orientation="horizontal"
-						android:background="@drawable/expire_date_bg"
-						android:paddingLeft="20dp"
-						android:layout_width="match_parent"
-						android:layout_height="45dp"
-						android:layout_margin="20dp">
-						<TextView
-							android:textSize="14sp"
-							android:textStyle="bold"
-							android:gravity="center"
-							android:id="@+id/check_update"
-							android:background="@drawable/update_btn_bg"
-							android:paddingLeft="20dp"
-							android:paddingRight="20dp"
-							android:layout_width="wrap_content"
-							android:layout_height="match_parent"
-							android:layout_marginLeft="10dp"
-							android:text="Check update"
-							style="@style/MainTextView" />
-					</LinearLayout>
-				</LinearLayout>
-			</RelativeLayout>
-		</ScrollView>
-			<LinearLayout
-				android:gravity="center"
-				android:orientation="horizontal"
-				android:visibility="visible"
-				android:background="#FF0D73B9"
-				android:layout_width="match_parent"
-			android:layout_height="55dp"
-			android:layout_alignParentBottom="true">
-			<LinearLayout
-				android:gravity="center"
-				android:orientation="vertical"
-				android:id="@+id/b_update"
-				android:background="@drawable/rlb_card_top_shape"
-				android:layout_width="match_parent"
-				android:layout_height="55dp"
-				android:layout_weight="1.0">
-				<ImageView
-					android:layout_width="25dp"
-					android:layout_height="25dp"
-					android:src="@drawable/ic_box_download"
-					app:tint="@color/accent_color" />
-				<TextView
-					android:textColor="#FF000000"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Update" />
-			</LinearLayout>
-			<LinearLayout
-				android:gravity="center"
-				android:orientation="vertical"
-				android:id="@+id/b_tweaks"
-				android:background="@drawable/rlb_card_top_shape"
-				android:layout_width="match_parent"
-				android:layout_height="55dp"
-				android:layout_weight="1.0">
-				<ImageView
-					android:layout_width="25dp"
-					android:layout_height="25dp"
-					android:src="@drawable/tweakers"
-					app:tint="@color/accent_color" />
-				<TextView
-					android:textColor="#FF000000"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Tweaks" />
-			</LinearLayout>
-			<LinearLayout
-				android:gravity="center"
-				android:orientation="vertical"
-				android:id="@+id/b_exit"
-				android:background="@drawable/rlb_card_top_shape"
-				android:layout_width="match_parent"
-				android:layout_height="55dp"
-				android:layout_weight="1.0">
-				<ImageView
-					android:layout_width="25dp"
-					android:layout_height="25dp"
-					android:src="@drawable/ic_info"
-					app:tint="@color/accent_color" />
-				<TextView
-					android:textColor="#FF000000"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="About" />
-			</LinearLayout>
-		</LinearLayout>
-	</LinearLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFFFF">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@id/main_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="42dp"
+                android:paddingTop="14dp"
+                android:paddingRight="42dp"
+                android:paddingBottom="26dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_app_icon"
+                        android:contentDescription="YEMEN NET VPN" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="YEMEN NET VPN"
+                            android:textColor="#111111"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Secure VPN connection"
+                            android:textColor="#777777"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_menu"
+                        android:onClick="menu"
+                        app:tint="#0878A8"
+                        android:contentDescription="Menu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@id/bytes_in"
+                        android:text="↓ 0 B"
+                        android:textColor="#0878A8"
+                        android:textSize="17sp" />
+                    <TextView
+                        android:id="@id/bytes_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:text="↑ 0 B"
+                        android:textColor="#0878A8"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Disconnected"
+                    android:textColor="#00C853"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@id/status_icon"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:visibility="gone" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Config Version : 1.0   |   VPN Duration : 00h 00m 00s"
+                    android:textColor="#555555"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@id/config_version"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="76dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/hiba_server_card_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="12dp">
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_app_icon"
+                        android:contentDescription="Auto Select Server" />
+                    <Spinner
+                        android:id="@id/profile"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:spinnerMode="dialog" />
+                    <ImageButton
+                        android:id="@id/profile_edit"
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="76dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/hiba_server_card_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="12dp">
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_web"
+                        android:contentDescription="Network" />
+                    <Spinner
+                        android:id="@+id/network_spin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:spinnerMode="dialog" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/expire_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:text="ACCOUNT EXPIRY  ·  0 Days Left"
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="218dp"
+                    android:layout_marginTop="12dp">
+                    <Button
+                        android:id="@id/connect"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/hiba_power_button"
+                        android:textColor="#00000000"
+                        android:text="" />
+                    <Button
+                        android:id="@id/disconnect"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/hiba_power_button"
+                        android:textColor="#00000000"
+                        android:text="" />
+                    <app.ovpnudp.developer.view.CircleProgressBar
+                        android:id="@+id/custom_progressBar"
+                        android:layout_width="198dp"
+                        android:layout_height="198dp"
+                        android:layout_gravity="center"
+                        app:progress="0"
+                        app:progressBarThickness="1dp"
+                        app:progressbarColor="#FFFFFFFF" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="00:00:00"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:layout_marginTop="-12dp"
+                    android:visibility="visible" />
+
+                <LinearLayout android:id="@id/profile_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/proxy_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/server_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/username_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/password_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/pk_password_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/cr_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/conn_details_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/stats_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/stats_expansion_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <LinearLayout android:id="@id/info_group" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <View android:id="@id/post_import_help_blurb" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <View android:id="@id/conn_details_boxed" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <Spinner android:id="@id/server" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <Spinner android:id="@id/proxy" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <ImageButton android:id="@id/proxy_edit" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@id/challenge" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <EditText android:id="@id/username" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <EditText android:id="@id/password" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <EditText android:id="@id/pk_password" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <EditText android:id="@id/response" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <CheckBox android:id="@id/password_save" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <CheckBox android:id="@id/pk_password_save" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <ProgressBar android:id="@id/progress" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@id/details_more_less" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+                <TextView android:id="@id/last_pkt_recv" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="#15A8D9"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout android:id="@+id/b_update" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><ImageView android:layout_width="25dp" android:layout_height="25dp" android:src="@drawable/ic_box_download" app:tint="#FFFFFFFF" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UPDATES" android:textColor="#123C55" android:textSize="12sp" /></LinearLayout>
+        <LinearLayout android:id="@+id/b_tweaks" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><ImageView android:layout_width="25dp" android:layout_height="25dp" android:src="@drawable/tweakers" app:tint="#FFFFFFFF" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LOGS" android:textColor="#123C55" android:textSize="12sp" /></LinearLayout>
+        <LinearLayout android:id="@+id/b_exit" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><ImageView android:layout_width="25dp" android:layout_height="25dp" android:src="@drawable/ic_info" app:tint="#FFFFFFFF" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="JOIN US" android:textColor="#123C55" android:textSize="12sp" /></LinearLayout>
+        <LinearLayout android:id="@+id/b_exit_real" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><ImageView android:layout_width="25dp" android:layout_height="25dp" android:src="@drawable/ic_arrow_right" app:tint="#FFFFFFFF" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="EXIT" android:textColor="#123C55" android:textSize="12sp" /></LinearLayout>
+    </LinearLayout>
 </LinearLayout>
