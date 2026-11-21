@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:orientation="vertical"
-	android:background="@color/accent_color"
+	android:background="#FFFFFFFF"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 	<include
@@ -94,7 +94,7 @@
 						android:textSize="9dp"
 						android:typeface="serif"
 						android:textStyle="bold"
-						android:textColor="#FFFBFBFB"
+						android:textColor="#0878A8"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="10dp"
@@ -193,7 +193,7 @@
 					<TextView
 						android:textSize="24sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFFFF"
+						android:textColor="#263238"
 						android:layout_gravity="center"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -206,14 +206,14 @@
 						android:layout_height="wrap_content">
 						<TextView
 							android:textSize="15sp"
-							android:textColor="#FFFFFFFF"
+							android:textColor="#263238"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:layout_marginRight="0dp"
 							android:text="Version : " />
 						<TextView
 							android:textSize="15sp"
-							android:textColor="#FFFFFFFF"
+							android:textColor="#263238"
 							android:id="@+id/config_version"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
@@ -351,13 +351,13 @@
 								android:layout_gravity="center"
 								android:layout_marginTop="12dp"
 								android:text="ACCOUNT EXPIRY"
-								android:textColor="#DCE4FF"
+								android:textColor="#607D8B"
 								android:textSize="10sp"
 								android:textStyle="bold" />
 							<TextView
 								android:textSize="16sp"
 								android:textStyle="bold"
-								android:textColor="#1B1464"
+								android:textColor="#263238"
 								android:layout_gravity="center"
 								android:id="@+id/expire_date"
 								android:layout_width="wrap_content"
@@ -423,13 +423,13 @@
 							android:layout_gravity="center"
 							android:layout_marginTop="10dp"
 							android:text="CONNECTION TIME"
-							android:textColor="#DCE4FF"
+							android:textColor="#607D8B"
 							android:textSize="10sp"
 							android:textStyle="bold" />
 						<TextView
 							android:textSize="24sp"
 							android:textStyle="bold"
-							android:textColor="#1B1464"
+							android:textColor="#263238"
 							android:layout_gravity="center"
 							android:id="@+id/duration"
 							android:layout_width="wrap_content"
@@ -635,7 +635,7 @@
 											android:singleLine="true" />
 										<TextView
 											android:textSize="12sp"
-											android:textColor="#FFFFFFFF"
+											android:textColor="#263238"
 											android:id="@+id/network_info"
 											android:visibility="gone"
 											android:layout_width="wrap_content"
@@ -684,11 +684,12 @@
 				</LinearLayout>
 			</RelativeLayout>
 		</ScrollView>
-		<LinearLayout
-			android:gravity="center"
-			android:orientation="horizontal"
-			android:visibility="gone"
-			android:layout_width="match_parent"
+			<LinearLayout
+				android:gravity="center"
+				android:orientation="horizontal"
+				android:visibility="visible"
+				android:background="#15A8D9"
+				android:layout_width="match_parent"
 			android:layout_height="55dp"
 			android:layout_alignParentBottom="true">
 			<LinearLayout
